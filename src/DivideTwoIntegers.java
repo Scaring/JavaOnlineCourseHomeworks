@@ -1,7 +1,7 @@
 public class DivideTwoIntegers {
     public static void main(String[] args) {
-        int a = 1038925803;
-        int b = 0;
+        int a = Integer.MIN_VALUE;
+        int b = 2;
         System.out.println(divide(a, b));
     }
 
@@ -18,12 +18,9 @@ public class DivideTwoIntegers {
         int result = 0;
         boolean isSameSign = true;
 
-        /* ************************************************************* */
         /* ************************SPECIAL CASES*********************** */
-        /* *********************************************************** */
-        if (divisor == 0) {
+        if (divisor == 0)
             throw new Error("Divisor must be not 0!");
-        }
 
         if (divisor == 1)
             return dividend;
@@ -39,30 +36,25 @@ public class DivideTwoIntegers {
         if ((dividend + 1) / divisor == Integer.MAX_VALUE)
             return Integer.MAX_VALUE;
 
-        /* ************************************************************* */
         /* ************************COMMON CASES************************ */
-        /* *********************************************************** */
         if (dividend < 0 && divisor < 0) // both are negative
-            result = count(dividend, divisor);
-
+            result = count(dividend, divisor);        
+        
         if (dividend > 0 && divisor > 0) { // both are positive
             dividend *= (-1);
             divisor *= (-1);
-
             result = count(dividend, divisor);
         }
 
         if (dividend > 0 && divisor < 0) { // divisor is negative
             dividend *= (-1);
             isSameSign = false;
-
             result = count(dividend, divisor);
         }
 
         if (dividend < 0 && divisor > 0) { // dividend is negative
             divisor *= (-1);
             isSameSign = false;
-
             result = count(dividend, divisor);
         }
 
