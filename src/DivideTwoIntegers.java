@@ -16,13 +16,13 @@ public class DivideTwoIntegers {
 
     public static int divide(int dividend, int divisor) {
         int result = 0;
+        boolean isSameSign = true;
 
         /* ************************************************************* */
         /* ************************SPECIAL CASES*********************** */
         /* *********************************************************** */
         if (divisor == 0) {
-            String message = "Divisor must be not 0!";
-            throw new Error(message);
+            throw new Error("Divisor must be not 0!");
         }
 
         if (divisor == 1)
@@ -42,26 +42,30 @@ public class DivideTwoIntegers {
         /* ************************************************************* */
         /* ************************COMMON CASES************************ */
         /* *********************************************************** */
-        if (dividend < 0 && divisor < 0) { // both are negative
+        if (dividend < 0 && divisor < 0) // both are negative
             result = count(dividend, divisor);
 
-        } else if (dividend > 0 && divisor > 0) { // both are positive
+        if (dividend > 0 && divisor > 0) { // both are positive
             dividend *= (-1);
             divisor *= (-1);
-            result = count(dividend, divisor);
 
-        } else if (dividend > 0 && divisor < 0) { // divisor is negative
-            dividend *= (-1);
             result = count(dividend, divisor);
-            result *= (-1);
-
-        } else if (dividend < 0 && divisor > 0) { // dividend is negative
-            divisor *= (-1);
-            result = count(dividend, divisor);
-            result *= (-1);
-
         }
 
-        return result;
+        if (dividend > 0 && divisor < 0) { // divisor is negative
+            dividend *= (-1);
+            isSameSign = false;
+
+            result = count(dividend, divisor);
+        }
+
+        if (dividend < 0 && divisor > 0) { // dividend is negative
+            divisor *= (-1);
+            isSameSign = false;
+
+            result = count(dividend, divisor);
+        }
+
+        return isSameSign ? result : result * (-1);
     }
 }
