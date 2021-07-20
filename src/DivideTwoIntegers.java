@@ -1,7 +1,7 @@
 public class DivideTwoIntegers {
     public static void main(String[] args) {
-        int a = Integer.MIN_VALUE;
-        int b = 2;
+        int a = -100;
+        int b = 10;
         System.out.println(divide(a, b));
     }
 
@@ -37,27 +37,28 @@ public class DivideTwoIntegers {
             return Integer.MAX_VALUE;
 
         /* ************************COMMON CASES************************ */
-        if (dividend < 0 && divisor < 0) // both are negative
-            result = count(dividend, divisor);        
-        
         if (dividend > 0 && divisor > 0) { // both are positive
             dividend *= (-1);
             divisor *= (-1);
-            result = count(dividend, divisor);
         }
 
         if (dividend > 0 && divisor < 0) { // divisor is negative
             dividend *= (-1);
             isSameSign = false;
-            result = count(dividend, divisor);
         }
 
         if (dividend < 0 && divisor > 0) { // dividend is negative
             divisor *= (-1);
             isSameSign = false;
-            result = count(dividend, divisor);
         }
+
+        result = count(dividend, divisor);
 
         return isSameSign ? result : result * (-1);
     }
 }
+
+// we use negative numbers becouse of specific of MAX and MIN possible values
+// Integer.MAX_VALUE == 2147483647 we can switch it to negative >>> -2147483647
+// but we can not do the same with Integer.MIN_VALUE == -2147483648 because it will be +2147483648 > Integer.MAX_VALUE
+// and it will be equal to 0

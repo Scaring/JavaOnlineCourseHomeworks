@@ -1,6 +1,6 @@
 public class Sqrt {
     public static void main(String[] args) {
-        int num = 16;
+        int num = 9;
         System.out.println(mySqrt(num));
     }
 
@@ -11,7 +11,7 @@ public class Sqrt {
         if (x == Integer.MAX_VALUE)
             return 46340;
 
-        for (int i = 1; true ; i++) {
+        for (int i = 1; true; i++) {
             if (x / (i * i) != 0)
                 continue;
             i -= 1;
