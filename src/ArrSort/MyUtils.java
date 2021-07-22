@@ -14,7 +14,7 @@ public class MyUtils {
 
                 if (a.length == 0)
                     return 1;
-                    
+
                 if (b.length == 0)
                     return -1;
 
@@ -34,7 +34,7 @@ public class MyUtils {
     }
 
     public static void main(String[] args) {
-        int[][] a1 = { { 1, 2, 3 }, { 1 }, { 1, 2 }, { 3, 1, 2 } };
+        int[][] a1 = {  { 1 }, { 1, 2 }, { 1, 2, 3 }, { 3, 1, 2 } };
 
         MyUtils my = new MyUtils();
 
@@ -43,6 +43,10 @@ public class MyUtils {
     }
 }
 
+//Comparator - compares x & y 
+// if x > y return 1 () --- x replaces left
+// if x < y return -1 --- y replaces left 
+// if x equals y return 0 --- x & y don`t change place
 
 //ArrSortTest.checkOneColumn()
 //input:    {{ 1, 2, 3 }, { 1 }, { 1, 2 }, { 3, 1, 2 }}
