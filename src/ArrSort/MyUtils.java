@@ -21,7 +21,7 @@ public class MyUtils {
                 if (b[0] - a[0] == 0 && a.length > 1 && b.length > 1)
                     return a[1] - b[1];
 
-                if (b[0] - a[0] == 0 && a.length > 1 )
+                if (b[0] - a[0] == 0 && a.length > 1)
                     return 1;
 
                 if (b[0] - a[0] == 0 && b.length > 1)
@@ -34,7 +34,7 @@ public class MyUtils {
     }
 
     public static void main(String[] args) {
-        int[][] a1 = {  { 1 }, { 1, 2 }, { 1, 2, 3 }, { 3, 1, 2 } };
+        int[][] a1 = { { 3, 1, 2 }, {}, { 1 }, { 1, 2, 3 } };
 
         MyUtils my = new MyUtils();
 
@@ -43,11 +43,13 @@ public class MyUtils {
     }
 }
 
-//Comparator - compares x & y 
+// [[3, 1, 2], [], [1], [1, 2, 3]]
+
+// Comparator - compares x & y
 // if x > y return 1 () --- x replaces left
-// if x < y return -1 --- y replaces left 
+// if x < y return -1 --- y replaces left
 // if x equals y return 0 --- x & y don`t change place
 
-//ArrSortTest.checkOneColumn()
-//input:    {{ 1, 2, 3 }, { 1 }, { 1, 2 }, { 3, 1, 2 }}
-//expected: {{ 3, 1, 2 }, { 1 }, { 1, 2, 3 }, { 1, 2 }}
+// ArrSortTest.checkOneColumn()
+// input: {{ 1, 2, 3 }, { 1 }, { 1, 2 }, { 3, 1, 2 }}
+// expected: {{ 3, 1, 2 }, { 1 }, { 1, 2, 3 }, { 1, 2 }}

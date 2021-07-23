@@ -1,6 +1,6 @@
 public class Palindrom {
     public static void main(String[] args) {
-        int pal = 101101;
+        int pal = -101101;
         System.out.println(isPalindrome(pal));
 
     }

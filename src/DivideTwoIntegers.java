@@ -32,7 +32,7 @@ public class DivideTwoIntegers {
         if (dividend == 0 || divisor == Integer.MIN_VALUE)
             return 0;
 
-        // devision owerflow case! (dividend == Integer.MIN_VALUE && divisor == 1 )
+        // devision overflow case! (dividend == Integer.MIN_VALUE && divisor == 1 )
         if ((dividend + 1) / divisor == Integer.MAX_VALUE)
             return Integer.MAX_VALUE;
 
