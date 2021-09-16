@@ -11,3 +11,5 @@ class ArrayUtil {
         return result/arr.length();
     }
 }
+
+//test
