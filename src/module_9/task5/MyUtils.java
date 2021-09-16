@@ -10,10 +10,11 @@ public class MyUtils {
 
         for (String word : wordsArr) {
             if(word.equals("")) continue;
-            
+
             if (result.length() + word.length() + temp > maxLineLength * linesCounter) {
+                result.deleteCharAt(result.length());
                 result.append("\n");
-                temp += (maxLineLength * linesCounter) - result.length();
+                temp += (maxLineLength * linesCounter) - result.length() + 1;
                 linesCounter += 1;
             }
 

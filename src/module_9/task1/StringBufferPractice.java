@@ -16,24 +16,17 @@ public class StringBufferPractice {
         String[] Tens = {"X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
         String[] Units = {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
 
-        switch(strNum.length()){
+        int lan = strNum.length();
+
+        switch(lan){
             case 4:
-                result.append(romanChar(Character.toString(strNum.charAt(0)), Thousands)); 
-                result.append(romanChar(Character.toString(strNum.charAt(1)), Hundreds)); 
-                result.append(romanChar(Character.toString(strNum.charAt(2)), Tens)); 
-                result.append(romanChar(Character.toString(strNum.charAt(3)), Units)); 
-                break;
+                result.append(romanChar(Character.toString(strNum.charAt(lan - 4)), Thousands)); 
             case 3:
-                result.append(romanChar(Character.toString(strNum.charAt(0)), Hundreds)); 
-                result.append(romanChar(Character.toString(strNum.charAt(1)), Tens)); 
-                result.append(romanChar(Character.toString(strNum.charAt(2)), Units)); 
-                break;
+                result.append(romanChar(Character.toString(strNum.charAt(lan - 3)), Hundreds)); 
             case 2:
-                result.append(romanChar(Character.toString(strNum.charAt(0)), Tens)); 
-                result.append(romanChar(Character.toString(strNum.charAt(1)), Units)); 
-                break;
+                result.append(romanChar(Character.toString(strNum.charAt(lan - 2)), Tens)); 
             case 1:
-                result.append(romanChar(Character.toString(strNum.charAt(0)), Units)); 
+                result.append(romanChar(Character.toString(strNum.charAt(lan - 1)), Units)); 
                 break;        
         }      
 
@@ -41,6 +34,6 @@ public class StringBufferPractice {
     }
     public static void main(String[] args) {
         StringBufferPractice sbp = new StringBufferPractice();
-        System.out.println(sbp.intToRoman(3999));      
+        System.out.println(sbp.intToRoman(222));      
     }
 }
