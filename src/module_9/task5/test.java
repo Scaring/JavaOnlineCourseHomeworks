@@ -31,12 +31,7 @@ public class test {
 
     public static void main(String[] args) {
         test t1 = new test();
-        String testText = """
-        The   name
-        is used
-        for its English connotations as
-        a strange and foreign-sounding
-        language.""";
+        String testText = "";
         System.out.println(t1.reformatLines(testText));
     }
 }

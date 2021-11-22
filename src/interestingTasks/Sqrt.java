@@ -1,3 +1,5 @@
+package interestingTasks;
+
 public class Sqrt {
     public static void main(String[] args) {
         int num = 9;

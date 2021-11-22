@@ -26,12 +26,7 @@ public class MyUtils {
 
     public static void main(String[] args) {
         MyUtils m1 = new MyUtils();
-        String testText = """
-                 The   name
-                 is used
-                 for its English connotations as
-                 a strange and foreign-sounding
-                language.""";
+        String testText = "";
         System.out.println(m1.reformatLines(testText));
     }
 }
